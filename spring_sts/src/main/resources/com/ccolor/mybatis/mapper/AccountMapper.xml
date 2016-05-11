@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ccolor.mybatis.mapper.AccountMapper">
+
+  <!-- <cache /> -->
+
+  <select id="getAccountByUsername" parameterType="string" resultType="Account">
+    SELECT
+          ACCOUNT.USERNAME,
+          ACCOUNT.password,
+          ACCOUNT.EMAIL,
+          ACCOUNT.FIRSTNAME,
+          ACCOUNT.LASTNAME,
+          ACCOUNT.STATUS,
+          ACCOUNT.address1,
+          ACCOUNT.address2,
+          ACCOUNT.CITY,
+          ACCOUNT.STATE,
+          ACCOUNT.ZIP,
+          ACCOUNT.COUNTRY,
+          ACCOUNT.PHONE
+          
+    FROM ACCOUNT
+    WHERE ACCOUNT.USERNAME = #{username}
+      
+  </select>
+
+  
+
+</mapper>
